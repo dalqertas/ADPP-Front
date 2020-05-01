@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import NewRequest from "./NewRequest";
+import PrevRequests from "./PrevRequests";
+import HodRequests from "./HodRequests";
 class Requests extends Component {
   render() {
     return (
@@ -6,7 +9,7 @@ class Requests extends Component {
         <ul className="nav nav-tabs">
           <li className="nav-item ">
             <a
-              className="nav-link active text-info"
+              className="nav-link active"
               data-toggle="tab"
               href="#new"
             >
@@ -14,8 +17,13 @@ class Requests extends Component {
             </a>
           </li>
           <li className="nav-item ">
-            <a className="nav-link text-info" data-toggle="tab" href="#prev">
+            <a className="nav-link " data-toggle="tab" href="#prev">
               Previous Vote Requests
+            </a>
+          </li>
+          <li className="nav-item ">
+            <a className="nav-link " data-toggle="tab" href="#hod">
+              HOD Requests
             </a>
           </li>
         </ul>
@@ -28,7 +36,11 @@ class Requests extends Component {
             padding: 10,
             borderRadius: 1
           }}
-        ></div>
+        >
+            <NewRequest/>
+            <PrevRequests/>
+            <HodRequests/>
+        </div>
       </div>
     );
   }

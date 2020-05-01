@@ -3,11 +3,12 @@ import RequestStore from "../Stores/requestStore";
 import { observer } from "mobx-react";
 import { Link } from "react-router-dom";
 
-function PrevRequests() {
-  const requests = RequestStore.requests;
+function StudentRequest() {
+  const requests = RequestStore.studentRequests;
+  console.log(requests);
   const RequestCards = requests.map((request) => (
     <Link
-      to={`/head/requests/${request.id}`}
+      to={`/head/requests/studentrequest/${request.id}`}
       className="card"
       style={{ marginTop: 10 }}
       key={request.id}
@@ -20,9 +21,9 @@ function PrevRequests() {
   ));
 
   return (
-    <div id="prev" className="tab-pane fade">
+    <div id="student" className="tab-pane fade">
       {RequestCards}
     </div>
   );
 }
-export default observer(PrevRequests);
+export default observer(StudentRequest);

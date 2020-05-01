@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink , Link } from "react-router-dom";
+import authStore from '../Stores/authStore';
 
 function StudentNavbar(){
     return (
@@ -12,16 +13,16 @@ function StudentNavbar(){
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link">Display Courses </a>
+            <NavLink to="/student/display" className="nav-link">Display Courses </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Generate</a>
+            <NavLink to="/student/generate" className="nav-link">Generate</NavLink>
           </li>
           <li className="nav-item">
-          <NavLink to="/student/requests" className="nav-link" href="#">Requests</NavLink>
+          <NavLink to="/student/requests" className="nav-link" >Requests</NavLink>
           </li>
         </ul>
-
+        <button className="btn btn-info" onClick={authStore.logout}>Sign out</button>
       </div>
     </nav>
     )

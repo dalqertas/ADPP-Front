@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink , Link } from "react-router-dom";
+import authStore from '../Stores/authStore';
 
 function HeadNavbar(){
     return (
@@ -12,14 +13,15 @@ function HeadNavbar(){
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link" href="#">Courses</a>
+            <NavLink to="/head/courses" className="nav-link nav-info" href="#">Courses</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/head/requests" className="nav-link" href="#">Requests</NavLink>
+            <NavLink to="/head/requests" className="nav-link nav-info" href="#">Requests</NavLink>
           </li>
         </ul>
 
       </div>
+      <button className="btn btn-info" onClick={authStore.logout}>Sign out</button>
     </nav>
     )
 }
